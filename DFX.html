@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Dragon Fighter Delux</title>
+    <link href="game.css" rel="stylesheet" type="text/css">
+</head>
+<body bgcolor="#6495ed">
+
+<!-- table that holds the game screen and gives simple story/instructions -->
+<table>
+    <tr>
+        <td><canvas id="game" width="1020" height="620"></canvas></td>
+        <td><h1 align="center">< Dragon Fighter Delux ></h1>
+            <p>Challenge! Defeat the evil Dragon with the powers of the brave viking warrior <b>Pik Pikchuson!</b>
+            <br/>When the warrior has defeated the Dragon you win! Shove the Dragon off the cliff to win!
+            <br/>Controls: LEFT and RIGHT arrow keys for movement. SPACE bar for jumping super power!!
+            <br/>If you are brave enough there is a power attack for LEFT(Press Q) and RIGHT(Press E)!
+            <br/>Controls: LEFT and RIGHT arrow keys for movement. Q and E for power attacks. Space Bar to jump.</p></td>
+    </tr>
+</table>
+
+    <br/>
+
+    <!-- Score -->
+    <p>Score: <span id="spanScore"></span></p>
+    <p>Timer: <span id="timer" value=""></span></p>
+
+
+    <!-- Refreshes the page, clears the score-->
+
+    <input type="button" onClick="clearScore();" value="Clear Score">
+
+    <!-- handles the score clearing -->
+    <script>
+        function clearScore(){
+            localStorage.pageLoadCount = 0;
+            document.getElementById('spanScore').textContent = "0";
+        }
+    </script>
+    <!-- loads libraries for the game engines -->
+    <script src="Box2dWeb-2.1.a.3.min.js"></script>
+    <script src="boxbox.js"></script>
+    <script src="game.js" type="text/javascript"></script>
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script> -->
+</body>
+</html>
